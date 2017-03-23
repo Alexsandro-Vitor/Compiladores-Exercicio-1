@@ -1,7 +1,7 @@
 
 %%
 
-//ESSA PARTE FOI COPIADA DO TESTE.JFLEX
+//------ PARTES COPIADAS DO TESTE.JFLEX ------
 
 /* 
 A linha atual pode ser acessada por yyline 
@@ -21,7 +21,7 @@ e a coluna atual com yycolumn.
 %standalone
 
 //nomeia a classe
-%class TesteLexer
+%class MiniJavaLexer
 
 /* 
 Declarações
@@ -38,7 +38,7 @@ int qtdeID=0;
 System.out.println("Quantidade de Identificadores encontrados: "+qtdeID);
 %eof}
 
-//A PARTIR DAQUI EU QUE FIZ
+//------ PARTES IMPLEMENTADAS POR MIM ------
 
 //PADROES NOMEADOS:
 
