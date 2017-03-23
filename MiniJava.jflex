@@ -67,4 +67,4 @@ comentarioMulti = "/*"({quebraLinha}|{qualquerCoisa})*"*/"
 {delimitador}     {System.out.println("Delimitador "+yytext());}
 {identificador}   {qtdeID++; System.out.println("Identificador "+yytext());}
 {inteiro}         {System.out.println("Inteiro: "+yytext());}
-.                 {System.out.println("Caractere ilegal! '" + yytext() + "' na linha: " + yyline + ", coluna: " + yycolumn);}
+.                 {throw new RuntimeException("Caractere ilegal! '" + yytext() + "' na linha: " + yyline + ", coluna: " + yycolumn);}
