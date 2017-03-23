@@ -45,12 +45,12 @@ System.out.println("Quantidade de Identificadores encontrados: "+qtdeID);
 espaco          = [ \t]
 quebraLinha     = [\n\r\f]
 whitespace      = {espaco}|{quebraLinha}
-qualquerCoisa   = {espaco}
-comentarioLinha = "//"{qualquerCoisa}*{quebraLinha}
-comentarioMulti = "/*"({quebraLinha}|{qualquerCoisa})*"*/"
 reservada       = "boolean"|"class"|"public"|"extends"|"static"|"void"|"main"|"String"|"int"|"while"|"if"|"else"|"return"|"length"|"true"|"false"|"this"|"new"|"System.out.println"
-identificador   = [_a-zA-Z][_a-zA-Z0-9]*
+identificador   = [_a-zA-Z]([_a-zA-Z0-9]*)
 inteiro         = 0|([1-9][0-9]*)
+qualquerCoisa   = {espaco}|{reservada}|{identificador}|{inteiro}
+comentarioLinha = "//"({qualquerCoisa}*){quebraLinha}
+comentarioMulti = "/*"({quebraLinha}|{qualquerCoisa})*"*/"
 
 %%
 //REGRAS LEXICAS:
