@@ -46,9 +46,9 @@ espaco      = [ \t]
 quebraLinha = [\n\r\f]
 whitespace  = {espaco} | {quebraLinha}
 
-qualquerCoisa   = {espaco} | {operador} | {pontuacao} | {delimitador} | {identificador} | {inteiro}
-comentarioLinha = "//"({qualquerCoisa}*){quebraLinha}
-comentarioMulti = "/*"({quebraLinha}|{qualquerCoisa})*"*/"
+qualquerCoisa   = {espaco} | {operador} | {pontuacao} | {delimitador} | {identificador} | {inteiro} | "//" | "/*"
+comentarioLinha = "//"({qualquerCoisa}|"*/")*{quebraLinha}
+comentarioMulti = "/*"({qualquerCoisa}|{quebraLinha})*"*/"
 
 booleano        = "true" | "false"
 
